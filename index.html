@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Haaappi Birdayyy Arhaamm 🎉</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: linear-gradient(-45deg, #1e1e2f, #2a2a40, #3a3a6a, #1e1e2f);
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+  color: white;
+  overflow-x: hidden;
+}
+
+@keyframes gradient {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+.page {
+  display: none;
+  padding: 60px 20px;
+}
+
+.active {
+  display: block;
+}
+
+button {
+  padding: 12px 25px;
+  font-size: 16px;
+  background: #ffcc00;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+button:hover {
+  background: #ffaa00;
+}
+
+h1 {
+  font-size: 38px;
+  color: #ffcc00;
+}
+
+/* Confetti */
+.confetti {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  top: -10px;
+  animation: fall 5s linear infinite;
+}
+
+@keyframes fall {
+  to { transform: translateY(100vh) rotate(360deg); }
+}
+
+.tomato {
+  width: 150px;
+  margin-top: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- MUSIC -->
+<!-- Replace with your own mp3 link -->
+<audio autoplay loop>
+  <source src="YOUR_MP3_LINK_HERE.mp3" type="audio/mpeg">
+</audio>
+
+<!-- PAGE 1 -->
+<div class="page active" id="page1">
+  <h1>Haappii birdayyy arhaamm! 🫵🏼🌹🌹</h1>
+  <p>
+  Today is not a normal day…  
+  it is Ungrateful Tomato Day 😭🍅
+  </p>
+
+  <img class="tomato"
+  src="https://media.giphy.com/media/3o7TKMt1VVNkHV2PaE/giphy.gif"
+  alt="Animated Tomato">
+
+  <button onclick="nextPage(2)">Next ➡</button>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page" id="page2">
+  <h1>Profile 😤</h1>
+  <p>
+  💦 Meme supplier <br><br>
+  💦 My occasional therapist <br><br>
+  💦 tease professionally but gets angry when teased back 🫵🏼🤣 <br><br>
+  💦 Girl scanner but (deep inside cries for Mahera)
+  </p>
+  <button onclick="nextPage(3)">Next ➡</button>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page" id="page3">
+  <h1>Achievements 😤</h1>
+  <p>
+  💦 4+ months daily texting streak <br><br>
+  💦 Surviving my judgmental mind 🥲 <br><br>
+  💦 Oohh biggest achievement is that you got me <br><br>
+  💦 Chess partner ♟
+  </p>
+  <button onclick="nextPage(4)">Next ➡</button>
+</div>
+
+<!-- PAGE 4 -->
+<div class="page" id="page4">
+  <h1>Final Message 🤍</h1>
+  <p>
+  Last Ramadan I lost Ziyad 💔 <br><br>
+  This Ramadan I found you 😌 <br><br>
+  Excited for next Ramadan!! <br><br><br>
+  Haaappi birthday Abdul Kazimi Havsii Arham 🫴🏼🤍
+  </p>
+
+  <button onclick="finalMessage()">Click for Surprise 👀</button>
+</div>
+
+<script>
+function nextPage(pageNumber) {
+  var pages = document.querySelectorAll('.page');
+  pages.forEach(function(page) {
+    page.classList.remove('active');
+  });
+  document.getElementById('page' + pageNumber).classList.add('active');
+}
+
+function finalMessage() {
+  alert("Legal Notice: Take care of your health so you live long with your future wife 🙂");
+}
+
+// Confetti generator
+for (let i = 0; i < 70; i++) {
+  let confetti = document.createElement("div");
+  confetti.classList.add("confetti");
+  confetti.style.left = Math.random() * 100 + "vw";
+  confetti.style.backgroundColor =
+    "hsl(" + Math.random() * 360 + ", 100%, 50%)";
+  confetti.style.animationDuration = (Math.random() * 3 + 2) + "s";
+  document.body.appendChild(confetti);
+}
+</script>
+
+</body>
+</html>
