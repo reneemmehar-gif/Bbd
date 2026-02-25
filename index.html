@@ -191,7 +191,16 @@ h1 {
       <button onclick="finalMessage()">Click for Surprise 👀</button>
     </div>
 
+  <audio id="bgMusic" loop>
+  <source src="birthday.mp3" type="audio/mpeg">
+  </audio>
 <script>
+  document.addEventListener("click", function() {
+    var music = document.getElementById("bgMusic");
+    if (music.paused) {
+        music.play();
+    }
+}, { once: true });
 function nextPage(pageNumber) {
   var pages = document.querySelectorAll('.page');
   pages.forEach(function(page) {
